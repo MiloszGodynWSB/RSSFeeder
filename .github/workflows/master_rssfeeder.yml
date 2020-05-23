@@ -18,7 +18,7 @@ jobs:
     - name: Set up Java version
       uses: actions/setup-java@v1
       with:
-        java-version: '11'
+        java-version: '8'
 
     - name: Build with Maven
       run: mvn clean install
@@ -28,5 +28,5 @@ jobs:
       with:
         app-name: 'rssfeeder'
         slot-name: 'production'
-        publish-profile: ${{ secrets.AzureAppService_PublishProfile_5c9a1bae26a24a5a993ab2ad6652b62d }}
+        publish-profile: ${{ secrets.AzureAppService_PublishProfile_f7bb3409b6d2422fa9c4c98878a8d062 }}
         package: '${{ github.workspace }}/target/*.jar'
