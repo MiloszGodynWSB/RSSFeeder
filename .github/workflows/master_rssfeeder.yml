@@ -28,5 +28,5 @@ jobs:
       with:
         app-name: 'rssfeeder'
         slot-name: 'production'
-        publish-profile: ${{ secrets.AzureAppService_PublishProfile_6d4de0b4fd6c4b15ad9c68436608a1f8 }}
+        publish-profile: ${{ secrets.AzureAppService_PublishProfile_9107a185adb3477bb4c1cacd188e2483 }}
         package: '${{ github.workspace }}/target/*.jar'
