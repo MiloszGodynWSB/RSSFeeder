@@ -20,34 +20,28 @@ public class FeedReader {
 
     private FeedRepository feedRepository;
     private static final String HTML_PREFIX =
-            """
-                    <!DOCTYPE html>
-                       <html lang="en">
-                       <head>
-                           <meta charset="UTF-8">
-                           <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-                                 integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-                       </head>
-                       <body>
-
-                       <div class="mx-auto" style="width: 50%;"><br/>
-                           <h3 style="text-align: center">Welcome to your RSS Feeder!</h3><br/>
-                           <hr>
-            """;
+            "        <!DOCTYPE html>\n" +
+            "           <html lang=\"en\">\n" +
+            "           <head>\n" +
+            "               <meta charset=\"UTF-8\">\n" +
+            "               <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css\"\n" +
+            "                     integrity=\"sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh\" crossorigin=\"anonymous\">\n" +
+            "           </head>\n" +
+            "           <body>\n" +
+            "\n" +
+            "           <div class=\"mx-auto\" style=\"width: 50%;\"><br/>\n" +
+            "               <h3 style=\"text-align: center\">Welcome to your RSS Feeder!</h3><br/>\n" +
+            "               <hr>\n";
     private static final String HTML_ENTRY =
-            """
-                        <h5><a href="%s" target="_blank">%s</a></h5>
-                                    <p>%s</p>
-                                    <a href="%s" target="_blank"><p style="font-size: small">%s</p></a>
-                                    <hr>
-            """;
+            "            <h5><a href=\"%s\" target=\"_blank\">%s</a></h5>\n" +
+            "                        <p>%s</p>\n" +
+            "                        <a href=\"%s\" target=\"_blank\"><p style=\"font-size: small\">%s</p></a>\n" +
+            "                        <hr>\n";
     private static final String HTML_POSTFIX =
-            """
-                    </div>
-
-                    </body>
-                    </html>
-            """;
+            "        </div>\n" +
+            "\n" +
+            "        </body>\n" +
+            "        </html>\n";
 
     @Autowired
     public FeedReader(FeedRepository feedRepository) {
