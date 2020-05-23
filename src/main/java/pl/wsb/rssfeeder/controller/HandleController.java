@@ -20,6 +20,7 @@ public class HandleController {
     private MailSender mailSender;
     private static final String ACTION_SAVE = "save";
     private static final String ACTION_SEND = "send";
+    private static final String ACTION_DELETE = "delete";
     private static final String EMAIL_PARAM_NAME = "emailAddress";
     private static final String FEEDURL_PARAM_NAME = "feedUrl";
 
@@ -42,6 +43,8 @@ public class HandleController {
         } else if (ACTION_SEND.equals(action) && !emailAddress.isEmpty()) {
             String forward = String.format("forward:/send?%s=%s", EMAIL_PARAM_NAME, emailAddress);
             return forward;
+        } else if (ACTION_DELETE.equals(action)) {
+            return "forward:/delete";
         } else {
             return "redirect:/";
         }
@@ -67,6 +70,14 @@ public class HandleController {
         mailSender.sendFeeds(emailAddress, content);
         DebugFrameController.setContent(content);
 
+        return "redirect:/";
+
+    }
+
+    @RequestMapping("/delete")
+    String deletesAll() {
+
+        feedRepository.deleteAll();
         return "redirect:/";
 
     }

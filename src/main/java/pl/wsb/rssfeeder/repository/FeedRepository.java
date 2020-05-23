@@ -11,4 +11,6 @@ public interface FeedRepository extends JpaRepository<Feed, Long> {
 
     List<Feed> findByEmailAddress(String emailAddress);
 
+    void deleteAll();
+
 }
