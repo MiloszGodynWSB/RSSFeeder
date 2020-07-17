@@ -2,8 +2,6 @@
 
 Project for educational purposes.
 
-http://rssfeeder.azurewebsites.net/
-
 ### tech stack
 * Java 11
 * Spring Boot 2.2.7
